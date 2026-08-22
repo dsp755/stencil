@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "declaration": true, // emit .d.ts
+    "rootDir": ".generated/react",
+    "outDir": "../react-components/dist",
+    "skipLibCheck": true
+  },
+  "include": [".generated/react/components.ts"]
+}

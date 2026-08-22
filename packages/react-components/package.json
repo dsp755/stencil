@@ -1,0 +1,23 @@
+{
+  "name": "react-components",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "dependencies": {
+    "stenciljs-tutorial": "^0.0.1",
+    "@stencil/react-output-target": "^1.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/components.js",
+      "types": "./dist/components.d.ts"
+    }
+  },
+  "files": [
+    "/dist"
+  ]
+}
