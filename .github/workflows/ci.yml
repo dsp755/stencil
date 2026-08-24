@@ -27,3 +27,9 @@ jobs:
 
       - name: Build React app
         run: npm run build -w packages/react-app
+
+      - name: Lint
+        run: npm run lint --workspaces --if-present
+
+      - name: Test
+        run: npm run test --workspaces --if-present
