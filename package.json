@@ -12,5 +12,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "stenciljs-tutorial-dsp755": "^0.0.1"
+  }
 }
