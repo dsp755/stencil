@@ -11,6 +11,7 @@
   "unpkg": "dist/stenciljs-tutorial/stenciljs-tutorial.esm.js",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/stenciljs-tutorial/stenciljs-tutorial.esm.js",
       "require": "./dist/stenciljs-tutorial/stenciljs-tutorial.cjs.js"
     },
