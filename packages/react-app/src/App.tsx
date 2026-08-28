@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import { MyComponent } from 'react-components'
+import { ComponentOne } from 'react-components'
 import './App.css'
 
 function App() {
@@ -31,7 +31,8 @@ function App() {
         </button>
       </section>
 
-      <MyComponent first='Stencil' last='JS' />
+      {/* <MyComponent first='Stencil' last='JS' /> */}
+      <ComponentOne onComponentClick={() => console.log(221)} />
 
       <div className='ticks'></div>
 

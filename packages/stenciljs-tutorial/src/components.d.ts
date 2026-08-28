@@ -23,8 +23,23 @@ export namespace Components {
         "middle"?: string;
     }
 }
+export interface ComponentOneCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLComponentOneElement;
+}
 declare global {
+    interface HTMLComponentOneElementEventMap {
+        "componentClick": void;
+    }
     interface HTMLComponentOneElement extends Components.ComponentOne, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLComponentOneElementEventMap>(type: K, listener: (this: HTMLComponentOneElement, ev: ComponentOneCustomEvent<HTMLComponentOneElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLComponentOneElementEventMap>(type: K, listener: (this: HTMLComponentOneElement, ev: ComponentOneCustomEvent<HTMLComponentOneElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLComponentOneElement: {
         prototype: HTMLComponentOneElement;
@@ -43,6 +58,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ComponentOne {
+        "onComponentClick"?: (event: ComponentOneCustomEvent<void>) => void;
     }
     interface MyComponent {
         /**
